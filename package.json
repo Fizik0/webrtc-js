@@ -2,6 +2,9 @@
   "devDependencies": {
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
+ codespace-expert-doodle-9v96qp66rpqc7vrq
+    "html-webpack-plugin": "^5.6.0",
+ main
     "style-loader": "^4.0.0",
     "svg-inline-loader": "^0.8.2"
   }
