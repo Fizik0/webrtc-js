@@ -1,0 +1,56 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+       - name: Cache 
+ использует: actions/cache@v4.1.1 
+ с помощью:
+ # Список файлов, каталогов и шаблонов подстановочных знаков для кэширования и восстановления 
+ путь: 
+ # Явный ключ для восстановления и сохранения кэша
+ Клавиша: 
+ # Упорядоченная многострочная строка со списком ключей, соответствующих префиксу, которые используются для восстановления устаревшего кэша, если для ключа не произошло попадания в кэш. Примечание `попадание в кэш` в этом случае возвращает false .
+ ключи восстановления: # необязательно
+ # Размер блока, используемого для разделения больших файлов во время загрузки, в байтах 
+ размер блока загрузки: # необязательно
+ # Необязательное логическое значение, если оно включено, позволяет исполнителям Windows сохранять или восстанавливать кэши, которые могут быть восстановлены или сохранены соответственно на других платформах 
+ enableCrossOsArchive: # необязательно, значение по умолчанию равно false
+ # Сбой рабочего процесса, если запись в кэше не найдена 
+ сбой при пропуске в кэше: # необязательно, значение по умолчанию равно false
+ # Проверить, существует ли запись в кэше для заданных входных данных (key, restore-keys), не загружая кэш 
+ только для поиска: # необязательно, по умолчанию равно false
+ # Запустите шаг post, чтобы сохранить кэш, даже если предыдущий шаг не удался 
+ сохранять-всегда: # необязательно, по умолчанию равно false
+ 
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
